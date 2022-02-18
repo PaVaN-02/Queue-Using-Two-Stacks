@@ -46,8 +46,9 @@ class Queue {
         return stack1.size();
     }
     
-    public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
+    public static void main(String[] args) throws FileNotFoundException {
+        FileReader f= new FileReader(args[0]);
+        Scanner scan = new Scanner(f);
         Queue queue = new Queue();
         int queries = Integer.parseInt(scan.nextLine());
         for(int i = 0; i < queries; i++) {
@@ -61,5 +62,6 @@ class Queue {
                 System.out.println(queue.peek());
             } 
         }
+        scan.close();
     }
 }
